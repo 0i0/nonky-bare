@@ -1,11 +1,11 @@
 {
-  "name": "geektoolio",
+  "name": "nonky",
   "version": "0.0.1",
   "author": "0i0 (Lior Leo Hakim)",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/0i0/geektoolio"
+    "url": "https://github.com/0i0/nonky"
   },
   "engines": {
     "node": "=8.6.0",
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "express": ">=0.0.1",
-    "pug": ">=0.0.1",
     "systeminformation": ">=0.0.1",
     "smc": ">=0.0.1",
     "request": ">=0.0.1",
