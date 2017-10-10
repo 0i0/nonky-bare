@@ -6,6 +6,7 @@ var os            = require('os')
   , request       = require('request')
   , nowplaying    = require('nowplaying')
   , express       = require('express')
+  , xml2js        = require('xml2js')
 
 var app = express()
 var http = require('http').Server(app)
@@ -81,7 +82,17 @@ app.get('/api/crypto', function (req, res) {
 
 io.on('connection', function(socket){
   nowplaying.on('playing', function (data) {
-    socket.broadcast.emit('playing', data)
+    var url = 'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=' + 
+      data.artist+ '&album=' + data.album+ '&api_key=ee89018b7b81952407bb7f5903867958'
+    request.get(url,{},function(err,gres,body){
+      xml2js.parseString(body,function(err,result){
+        data.coverartUrl = (result.lfm.$.status == 'ok')?result.lfm.album[0].image[2]._:''
+        socket.broadcast.emit('playing', data)
+      })
+      
+    })
+    
+    
   })
   nowplaying.on('paused', function (data) {
     socket.broadcast.emit('paused', data)

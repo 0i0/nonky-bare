@@ -90,3 +90,11 @@ body{
 	left: 0px;
 }
 
+#now-playing-coverart{
+	width: 174px;
+	height: 174px;
+	top:350px;
+	border-radius: 20px;
+	opacity: 0.7;
+}
+

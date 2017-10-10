@@ -108,6 +108,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     var socket = window.io()
     socket.on('playing', function(data){
       $('#now-playing').html(data.artist+ ' - ' + data.name)
+      $('#now-playing-coverart').css('background-image','url("'+data.coverartUrl+'")')
     })
     socket.on('paused', function(){
       $('#now-playing').html('')

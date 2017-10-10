@@ -1,4 +1,4 @@
-![Screen](https://i.imgur.com/XROoRU4.png)
+![Screen](https://i.imgur.com/HsJ27or.png)
 
 ![travis-ci](https://api.travis-ci.org/0i0/nonky.svg?branch=master)
 
@@ -19,7 +19,7 @@ To make your own nonky
 - make the power house index.html, style.css, script.js
 - creat your design (follow the jquery example)
 - send me a photo to your design and a link to your repo
-- links to best designs will be added on this page
+- links to designs will be added on this page
 
 # Installation
 
@@ -49,6 +49,6 @@ Ethereum
 
 # Special thanks
 
-special thanks go to Tae Won Ha of [http://qvacua.com](http://qvacua.com) of Qdesktop
+special thanks go to Tae Won Ha for [http://qvacua.com](http://qvacua.com) of Qdesktop
 
 the Qnonky.app is build from the following repo [https://github.com/0i0/qdesktop](https://github.com/0i0/qdesktop) 
