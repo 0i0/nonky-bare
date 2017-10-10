@@ -7,15 +7,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>Qdesktop+nonky</string>
+	<string>Qnonky</string>
 	<key>CFBundleIconFile</key>
-	<string>Qdesktop+nonky</string>
+	<string>Qnonky</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.qvacua.QdesktopNony</string>
+	<string>com.liorhakim.QNonky</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Qdesktop+nonky</string>
+	<string>Qnonky</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

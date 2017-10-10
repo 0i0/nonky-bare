@@ -33,7 +33,7 @@ To make your own nonky
 
 # Run the Qdesktop+nonky app
 
-	Qdesktop+nonky.app
+	Qnonky.app
 
 # Tipping
 
