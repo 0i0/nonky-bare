@@ -57,11 +57,12 @@ app.get('/api/defaultnet', function (req, res) {
   })
 })
 
-app.get('/api/ps/:sortcolumn', function (req, res) {
-  var sortcolumn = req.params.sortcolumn
+app.get('/api/ps/:numOfPs/:sortColumn', function (req, res) {
+  var numOfPs = req.params.numOfPs
+  var sortcolumn = req.params.sortColumn
   exec0('ps -Ao pid,%cpu,%mem,comm |sort -nrk '+
         sortcolumn+
-        ' | head -n 5 | awk \'{gsub("(.+/)","",$4);print "<"substr($4,1,13)"<" "," $1 "," $2 "," $3 ":" }\'',function(error, stdout, stderr) {
+        ' | head -n '+numOfPs+' | awk \'{gsub("(.+/)","",$4);print "<"substr($4,1,13)"<" "," $1 "," $2 "," $3 ":" }\'',function(error, stdout, stderr) {
     if(stderr) return
     var str = stdout.replace(/:/g,'],[')
     str = str.replace(/</g,'"')

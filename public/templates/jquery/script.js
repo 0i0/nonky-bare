@@ -74,7 +74,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
   // get Top processes by sorted by the second column (cpu useage)
   function getProcesses(){
     $.ajax({
-      url: '/api/ps/2?_=' + new Date().getTime(),
+      url: '/api/ps/5/2?_=' + new Date().getTime(),
     }).done(function(data) {
       $('#ps-tbody').html('')
       makeTable(data,'ps-tbody')
