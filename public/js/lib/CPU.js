@@ -1,10 +1,8 @@
 define(function (require) {
   var CPU = {}
   CPU.cacluateAvgUse = function(data){
-    var samples = [];
+    var samples = []
     var samplesNumber = data.length 
-    var cpusAvgs = []
-    var coresDiffSums = []
     // format data so its by core
     for (var core = 0; core<data[0].length;core++) {
       samples.push({total:[]})
@@ -13,7 +11,7 @@ define(function (require) {
       }
       for (var i = 0; i<data.length;i++) {
         var total = 0
-        for(var key in data[0][core].times){
+        for(key in data[0][core].times){
           samples[core][key].push(data[i][core].times[key])
           total += data[i][core].times[key]
         }
@@ -21,8 +19,8 @@ define(function (require) {
       }   
     }
     // calculat usage diffs
-    for (var core = 0; core<samples.length;core++) {
-      for(var key in samples[core]){
+    for (core = 0; core<samples.length;core++) {
+      for(key in samples[core]){
         samples[core][key+'Diff'] =[]
         for (var sample = 1; sample < samplesNumber ; sample++) {
           samples[core][key+'Diff'].push(samples[core][key][sample]-samples[core][key][sample-1])

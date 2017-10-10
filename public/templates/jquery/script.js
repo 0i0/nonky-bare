@@ -1,12 +1,12 @@
 requirejs.config({
-    baseUrl: '/js/lib',
-    paths: {
-        jquery: 'jquery-3.2.1.min',
-        CPU: 'CPU',
-        canvasRings: 'canvas-rings',
-        makeTable: 'maketable'
-    }
-});
+  baseUrl: '/js/lib',
+  paths: {
+    jquery: 'jquery-3.2.1.min',
+    CPU: 'CPU',
+    canvasRings: 'canvas-rings',
+    makeTable: 'maketable'
+  }
+})
 define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeTable) {
   // Get CPU Usage Data
   function getCPUs(){
@@ -14,12 +14,12 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
       url: '/api/cpus/4/500?_=' + new Date().getTime()
     }).done(function(data) {
       setTimeout(getCPUs,window.refreshRate)
-      samples = CPU.cacluateAvgUse(data)    
+      var samples = CPU.cacluateAvgUse(data)    
       window.ctx.clearRect(50-55, 50-55, 55*2, 55*2)
       for (var core = samples.length - 1; core >= 0; core--) {
         drawRing(window.ctx,50,50,25+core*7,6,30,330,false,samples[core].avg,0,0.5,200,0.5)
       }
-    });
+    })
   }  
   // CPU Tempture from smc (for more data check https://www.npmjs.com/package/smc)
   function getCPUTemp(){
@@ -29,7 +29,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
       setTimeout(getCPUTemp,window.refreshRate) 
       var cputemp = parseInt(data)
       $('#cputemp-data').html( cputemp +'°')
-    });
+    })
   }
   // Get Memory data
   function getMem(){
@@ -43,7 +43,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
       $('#mem-data').html( used+ 'G/' +total +'G' )
       window.ctx.clearRect(150-30, 95-30, 30*2, 30*2)
       drawRing(window.ctx,150,95,30,12,90,180,true,used/total,0,0.5,200,0.5)
-    });
+    })
   }
   // Get Network Data from default Interface
   function getNet(){
@@ -65,7 +65,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
         window.dnChartData.datasets[0].data.splice(0,1)
         window.dnBar.update()
       }
-    });
+    })
   }
   // get Top processes by sorted by the second column (cpu useage)
   function getProcesses(){
@@ -75,7 +75,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
       setTimeout(getProcesses,window.refreshRate) 
       $('#ps-tbody').html('')
       makeTable(data,'ps-tbody')
-    });
+    })
   }
   // get Criptocurrency qoutes
   function getCrypto(){
@@ -90,7 +90,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
       }
       $('#crypto-body').html('')
       makeTable(data,'crypto-body')
-    });
+    })
   }
   $( document ).ready(function(){
     window.timers = {}
