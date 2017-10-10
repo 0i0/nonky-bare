@@ -31,13 +31,9 @@ To make your own nonky
 
 	install_nonky.sh
 
-# Install geekTool
+# Run the Qdesktop+nonky app
 
-Download GeekTool from https://www.tynsoe.org/v2/geektool/
-
-# Open the geeklet file from the root of the project
-
-	nonky.glet
+	Qdesktop+nonky.app
 
 # Tipping
 
@@ -50,3 +46,7 @@ Bitcoin
 Ethereum
 
 	0x8423b2cA48Bd9a734B4FE27A4E78f64e12131B79​
+
+# Special thanks
+
+special thanks go to Tae Won Ha of [http://qvacua.com](http://qvacua.com) of Qdesktop
