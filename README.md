@@ -1,4 +1,4 @@
-![Screen](https://i.imgur.com/HsJ27or.png)
+![Screen](https://i.imgur.com/3Et0E1B.png)
 
 ![travis-ci](https://api.travis-ci.org/0i0/nonky.svg?branch=master)
 
