@@ -50,3 +50,5 @@ Ethereum
 # Special thanks
 
 special thanks go to Tae Won Ha of [http://qvacua.com](http://qvacua.com) of Qdesktop
+
+the Qnonky.app is build from the following repo [https://github.com/0i0/qdesktop](https://github.com/0i0/qdesktop) 
