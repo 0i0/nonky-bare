@@ -37,13 +37,13 @@ echo "installing npm dependencies"
 npm install
 
 while true; do
-  read -p "would you like me to start geektoolio server on startup?" yn
+  read -p "would you like me to start nonky server on startup?" yn
   case $yn in
     [Yy]*) echo "setting up launcDeamond...";
-      sed -e "s~user~$user~;s~pwd~$dir~" < com.liorhakim.geektoolio-template.plist > com.liorhakim.geektoolio.plist
-      sudo cp com.liorhakim.geektoolio.plist /Library/LaunchDaemons/com.liorhakim.geektoolio.plist
-      sudo chown root:wheel /Library/LaunchDaemons/com.liorhakim.geektoolio.plist
-      sudo launchctl load  /Library/LaunchDaemons/com.liorhakim.geektoolio.plist
+      sed -e "s~user~$user~;s~pwd~$dir~" < com.liorhakim.nonky-template.plist > com.liorhakim.nonky.plist
+      sudo cp com.liorhakim.nonky.plist /Library/LaunchDaemons/com.liorhakim.nonky.plist
+      sudo chown root:wheel /Library/LaunchDaemons/com.liorhakim.nonky.plist
+      sudo launchctl load  /Library/LaunchDaemons/com.liorhakim.nonky.plist
       echo "setenv PATH $PATH:$dir" | sudo tee -a /etc/launchd.conf
       break;;
     [Nn]*) echo "bailing on autostart and proceeding..."

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.liorhakim.geektoolio</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/node</string>
+        <string>--inspect</string>
+        <string>/Users/leo/GoogleDrive/src/nonky/app.js</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>UserName</key>
+    <string>leo</string>
+    <key>StandardErrorPath</key>
+	<string>/tmp/geektoolio.err</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/geektoolio.out</string>
+</dict>
+</plist>
