@@ -96,8 +96,16 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     window.timers = {}
     window.refreshRate = 1000
     var $c = $('#myCanvas')
+    // Canvas for cpus
     window.ctx = $c[0].getContext('2d')
-
+    // Setup Now playing events (itunes and spotify)
+    var socket = window.io()
+    socket.on('playing', function(data){
+      $('#now-playing').html(data.artist+ ' - ' + data.name)
+    })
+    socket.on('paused', function(){
+      $('#now-playing').html('')
+    })
     var ctxup = $('#up-chart')[0].getContext('2d')
     var ctxdn = $('#dn-chart')[0].getContext('2d')
     // Defenition for Bandwidth Charts 
