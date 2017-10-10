@@ -28,7 +28,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     }).done(function(data) {
       setTimeout(getCPUTemp,window.refreshRate) 
       var cputemp = parseInt(data)
-      $('#cputemp-data').html( +'°')
+      $('#cputemp-data').html( cputemp +'°')
     });
   }
   // Get Memory data
