@@ -37,7 +37,7 @@ Download GeekTool from https://www.tynsoe.org/v2/geektool/
 
 # Open the geeklet file from the root of the project
 
-nonky.glet
+	nonky.glet
 
 # Tipping
 

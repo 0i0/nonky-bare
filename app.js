@@ -27,8 +27,7 @@ app.get('/api/cpus/:samplesNumber/:sampleTime', function (req, res) {
       samples.push(os.cpus())
       samplesNumber--
       if (samplesNumber==1) {
-        res.setHeader('Content-Type', 'application/json')
-        res.send(JSON.stringify(samples))
+        res.json(samples)
       }else{
         setTimeout(getSample,sampleTime)
       }
@@ -38,26 +37,22 @@ app.get('/api/cpus/:samplesNumber/:sampleTime', function (req, res) {
 
 app.get('/api/smc/:key', function (req, res) {
   var key = req.params.key
-  res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify(smc.get(key)))
-  //res.send(smc.get('TC0P').toString())
+  res.json(smc.get(key))
 })
 
 app.get('/api/mem', function (req, res) {
-  res.setHeader('Content-Type', 'application/json')
-  res.send(JSON.stringify(
+  res.json(
     {
       total:os.totalmem(),
       free:os.freemem()
     }
-  ))
+  )
 })
 
 app.get('/api/defaultnet', function (req, res) {
   si.networkInterfaceDefault(function(interface){
     si.networkStats(interface, function(data) {
-      res.setHeader('Content-Type', 'application/json')
-      res.send(JSON.stringify(data))
+      res.json(data)
     })
   })
 })
@@ -71,8 +66,7 @@ app.get('/api/ps/:sortcolumn', function (req, res) {
     var str = stdout.replace(/:/g,'],[')
     str = str.replace(/</g,'"')
     str = '[['+str+']]'
-    res.setHeader('Content-Type', 'application/json')
-    res.send(str)
+    res.json(JSON.parse(str))
   })
 })
 
@@ -80,8 +74,7 @@ app.get('/api/crypto', function (req, res) {
   request.get('https://api.coinmarketcap.com/v1/ticker/',{},function(err,gres,body){
     if(err) return
     if(res.statusCode !== 200 ) return
-    res.setHeader('Content-Type', 'application/json')
-    res.send(body)
+    res.json(JSON.parse(body))
   })
 })
 
