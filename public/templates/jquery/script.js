@@ -53,8 +53,8 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     $.ajax({
       url: '/api/defaultnet?_=' + new Date().getTime(),
     }).done(function(data) {
-      var upKB = Math.round(data.tx_sec/8/1024*100)/100
-      var dnKB = Math.round(data.rx_sec/8/1024*100)/100
+      var upKB = Math.round(data.tx_sec/1024*100)/100
+      var dnKB = Math.round(data.rx_sec/1024*100)/100
       $('#netup-data').html(upKB + 'KB')
       $('#netdn-data').html(dnKB + 'KB')
       if (window.upChartData.datasets.length > 0) {
