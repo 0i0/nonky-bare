@@ -31,7 +31,7 @@ To make your own nonky
 
 	install_nonky.sh
 
-# Run the Qdesktop+nonky app
+# Run the Qnonky app
 
 	Qnonky.app
 
