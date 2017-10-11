@@ -73,7 +73,9 @@ app.get('/api/ps/:numOfPs/:sortColumn', function (req, res) {
 })
 
 app.get('/api/crypto', function (req, res) {
-  request.get('https://api.coinmarketcap.com/v1/ticker/',{},function(err,gres,body){
+  request.get('https://api.coinmarketcap.com/v1/ticker/',{
+    maxRedirects: 5
+  },function(err,gres,body){
     if(err) return
     if(res.statusCode !== 200 ) return
     res.json(JSON.parse(body))
@@ -84,15 +86,16 @@ io.on('connection', function(socket){
   nowplaying.on('playing', function (data) {
     var url = 'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=' + 
       data.artist+ '&album=' + data.album+ '&api_key=ee89018b7b81952407bb7f5903867958'
-    request.get(url,{},function(err,gres,body){
+    request.get(url,{
+      maxRedirects: 5
+    },function(err,gres,body){
       xml2js.parseString(body,function(err,result){
+        if(err) return
         data.coverartUrl = (result.lfm.$.status == 'ok')?result.lfm.album[0].image[2]._:''
         socket.broadcast.emit('playing', data)
       })
       
     })
-    
-    
   })
   nowplaying.on('paused', function (data) {
     socket.broadcast.emit('paused', data)

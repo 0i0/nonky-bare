@@ -8,7 +8,7 @@ requirejs.config({
   }
 })
 define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeTable) {
-  // Get CPU Usage Data
+  // Get CPU Usage Data the api is /api/cpus/numberOfSamples/SampleingInterval
   function getCPUs(){
     $.ajax({
       url: '/api/cpus/4/500?_=' + new Date().getTime()
@@ -53,6 +53,8 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     $.ajax({
       url: '/api/defaultnet?_=' + new Date().getTime(),
     }).done(function(data) {
+      // Uncomment the following line to see the whole data returned from the api
+      // console.log(data)
       var upKB = Math.round(data.tx_sec/1024*100)/100
       var dnKB = Math.round(data.rx_sec/1024*100)/100
       $('#netup-data').html(upKB + 'KB')
@@ -87,6 +89,8 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     $.ajax({
       url: '/api/crypto?_=?_=' + new Date().getTime(),
     }).done(function(data) {
+      // Uncomment the following line to see the whole data returned from the api
+      // console.log(data)
       data.splice(5,data.length-5)
       var qoutes = data
       for (var i = 0; i < 5; i++) {
