@@ -59,8 +59,8 @@ app.get('/api/defaultnet', function (req, res) {
 })
 
 app.get('/api/ps/:numOfPs/:sortColumn', function (req, res) {
-  var numOfPs = req.params.numOfPs
-  var sortcolumn = req.params.sortColumn
+  var numOfPs = req.params.numOfPs?Number(req.params.numOfPs):5
+  var sortcolumn = req.params.sortColumn?Number(req.params.sortColumn):2
   exec0('ps -Ao pid,%cpu,%mem,comm |sort -nrk '+
         sortcolumn+
         ' | head -n '+numOfPs+' | awk \'{gsub("(.+/)","",$4);print "<"substr($4,1,13)"<" "," $1 "," $2 "," $3 ":" }\'',function(error, stdout, stderr) {
@@ -68,7 +68,9 @@ app.get('/api/ps/:numOfPs/:sortColumn', function (req, res) {
     var str = stdout.replace(/:/g,'],[')
     str = str.replace(/</g,'"')
     str = '[['+str+']]'
-    res.json(JSON.parse(str))
+    var ps =JSON.parse(str)
+    ps.splice(ps.length-1,1)
+    res.json(ps)
   })
 })
 

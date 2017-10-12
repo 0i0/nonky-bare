@@ -1,0 +1,17 @@
+html, body{
+    height: 100%;
+}
+
+body{
+   font-family: Menlo,Monaco,Consolas,"Liberation Mono",Arial,"Courier New",monospace;
+   font-size: 10px;
+   color: #cccccc;
+   width:100%;
+   /*background-color:#000000;*/
+}
+
+#anchor{
+	height: 100%;
+	right: 0px;
+	position: absolute;
+}
