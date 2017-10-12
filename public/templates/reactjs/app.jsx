@@ -31,7 +31,6 @@ var Background = React.createClass({
     fetch('/api/ps/4/2?_=' + new Date().getTime())
       .then(response => response.json())
       .then(json => {
-        console.log(json)
         this.setState({fading: true}) // fade out
         this.timer = setTimeout(_ => {
           this.setState({list: json})
