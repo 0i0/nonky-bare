@@ -18,7 +18,7 @@ define(['jquery'],function ($) {
             <li class="ps">\
               <div class="data name">'+data[i][0]+'</div>\
               <div class="data pid">'+data[i][1]+'</div>\
-              <div class="data cpu">'+parseInt(data[i][2])+'<span class="p">%<span></div>\
+              <div class="data cpu">'+parseInt(data[i][2])+'<span class="p">%</span></div>\
             </li>\
           ')
           $tmpl.find('.data').hide()

@@ -51,6 +51,7 @@ li.ps:after{
 	border-bottom: 5px solid rgba(255,255,255,0.5);
 	/* -webkit-background-clip: padding-box; */
 }
+
 .name{
 	position: absolute;
 	font-weight: bold;
