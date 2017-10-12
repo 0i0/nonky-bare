@@ -1,7 +1,7 @@
 requirejs.config({
   baseUrl: '/js/lib',
   paths: {
-    jquery: 'jquery-3.2.1.min',
+    jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min',
     CPU: 'CPU',
     canvasRings: 'canvas-rings',
     makeTable: 'maketable'
@@ -18,7 +18,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
       for (var core = samples.length - 1; core >= 0; core--) {
         drawRing(window.ctx,50,50,25+core*7,6,30,330,false,samples[core].avg,0,0.5,200,0.5)
       }
-    }).always(function(err){
+    }).always(function(){
       setTimeout(getCPUs,window.refreshRate)
     })
   }  
@@ -29,7 +29,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     }).done(function(data) {
       var cputemp = parseInt(data)
       $('#cputemp-data').html( cputemp +'°')
-    }).always(function(err){
+    }).always(function(){
       setTimeout(getCPUTemp,window.refreshRate) 
     })
   }
@@ -69,7 +69,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
         window.dnChartData.datasets[0].data.splice(0,1)
         window.dnBar.update()
       }
-    }).always(function(err){
+    }).always(function(){
       setTimeout(getNet,window.refreshRate) 
     })
   }
@@ -80,7 +80,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
     }).done(function(data) {
       $('#ps-tbody').html('')
       makeTable(data,'ps-tbody')
-    }).always(function(err){
+    }).always(function(){
       setTimeout(getProcesses,window.refreshRate) 
     })
   }
@@ -98,7 +98,7 @@ define(['jquery','CPU','canvasRings','makeTable'],function ($,CPU,drawRing,makeT
       }
       $('#crypto-body').html('')
       makeTable(data,'crypto-body')
-    }).always(function(err){
+    }).always(function(){
       setTimeout(getCrypto,window.refreshRate) 
     })
   }

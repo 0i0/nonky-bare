@@ -1,7 +1,7 @@
 requirejs.config({
   baseUrl: '/js/lib',
   paths: {
-    jquery: 'jquery-3.2.1.min',
+    jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min',
   }
 })
 define(['jquery'],function ($) {
