@@ -28,8 +28,5 @@
     "url": "https://github.com/0i0/nonky/issues"
   },
   "homepage": "https://github.com/0i0/nonky#readme",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "main": "app.js"
 }

@@ -1,5 +1,7 @@
 var child_process = require('child_process')
 var os            = require('os')
+  , fs            = require('fs')
+  , path            = require('path')
   , exec0         = child_process.exec
   , si            = require('systeminformation')
   , smc           = require('smc')
@@ -13,6 +15,15 @@ var http = require('http').Server(app)
 var io = require('socket.io')(http)
 
 app.use(express.static(__dirname + '/public'))
+
+app.get('/api/templates',function(req,res){
+  var p = __dirname+'/public/templates'
+  files = fs.readdirSync(p)
+  files = files.filter(function(file){
+    return fs.statSync(path.join(p, file)).isDirectory()
+  })
+  res.json(files)
+})
 
 // returns a number of samples of os.cpus
 app.get('/api/cpus/:samplesNumber/:sampleTime', function (req, res) {
