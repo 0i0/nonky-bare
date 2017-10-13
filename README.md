@@ -31,9 +31,9 @@ To make your own nonky
 
 	install_nonky.sh
 
-# Run the Qnonky app
+# Run the nonky app
 
-	Qnonky.app
+	nonky.app
 
 # Tipping
 
@@ -46,9 +46,3 @@ Bitcoin
 Ethereum
 
 	0x8423b2cA48Bd9a734B4FE27A4E78f64e12131B79​
-
-# Special thanks
-
-special thanks go to Tae Won Ha of [http://qvacua.com](http://qvacua.com) for Qdesktop
-
-the Qnonky.app is build from the following repo [https://github.com/0i0/qdesktop](https://github.com/0i0/qdesktop) 
