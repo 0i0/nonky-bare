@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.liorhakim.geektoolio</string>
+    <string>com.liorhakim.nonky</string>
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/node</string>
@@ -15,8 +15,8 @@
     <key>UserName</key>
     <string>user</string>
     <key>StandardErrorPath</key>
-	<string>/tmp/geektoolio.err</string>
+	<string>/tmp/nonky.err</string>
 	<key>StandardOutPath</key>
-	<string>/tmp/geektoolio.out</string>
+	<string>/tmp/nonky.out</string>
 </dict>
 </plist>
