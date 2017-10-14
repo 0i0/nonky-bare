@@ -1,11 +1,12 @@
-![Screen](https://i.imgur.com/3Et0E1B.png)
 
-![travis-ci](https://api.travis-ci.org/0i0/nonky.svg?branch=master)
+<img src="https://i.imgur.com/Pj1VqQh.png" align="right"/>
 
-# About
+# nonky ![travis-ci](https://api.travis-ci.org/0i0/nonky.svg?branch=master)
 
 nonky is a way to display system information or any kind of information right on your desktop.
 Inspired by Linux's conky it takes a different approch, a straight forward api exposes a lot of data, js libraries are doing the heavier calculations and finally, use HTML5 to customize the look and feel
+
+![Screen](https://i.imgur.com/3Et0E1B.png)
 
 # Costumization
 
@@ -17,7 +18,7 @@ To make your own nonky
 - run the install script
 - open a new folder in /public/templates/\<your nonchaky\>
 - make the power house index.html, style.css, script.js
-- creat your design (follow the jquery example)
+- creat your design - follow the examples
 - send me a photo to your design and a link to your repo
 - links to designs will be added on this page
 
